@@ -1,6 +1,3 @@
-# Task 1
-
-```SystemVerilog
 module counter #(
     parameter WIDTH = 8
 )(
@@ -17,4 +14,3 @@ always_ff @ (posedge clk)
     // else statement counts upwards by concating a WIDTH - 1 of 0 bits to en
     // ie append 00000001 or 00000000 based on whether enable is HIGH
 endmodule
-```
