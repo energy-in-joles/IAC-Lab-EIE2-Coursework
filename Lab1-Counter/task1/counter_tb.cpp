@@ -31,6 +31,7 @@ int main(int argc, char **argv, char **env) {
         }
         top->rst = (i < 2) | (i == 15);
         top->en = (i > 4);
+        
         if (Verilated::gotFinish()) exit(0);
     }
     tfp->close();
