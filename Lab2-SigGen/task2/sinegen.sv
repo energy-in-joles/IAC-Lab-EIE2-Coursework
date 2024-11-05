@@ -4,6 +4,7 @@ module sinegen #(
 )(
     input   logic                   clk,
     input   logic                   rst,
+    input   logic   [A_WIDTH-1:0]   offset,
     input   logic                   en,
     input   logic   [D_WIDTH-1:0]   incr,
     output  logic   [D_WIDTH-1:0]   dout1,
@@ -23,7 +24,7 @@ counter addrCounter(
 rom2ports sineRom (
     .clk (clk),
     .addr1 (address),
-    .addr2 (address - 127),
+    .addr2 (address - offset),
     .dout1 (dout1),
     .dout2 (dout2)
 );

@@ -28,6 +28,7 @@ int main(int argc, char **argv, char **env) {
 
     // run simulation for many clock cycles
     for (i=0; i<1000000; i++) {
+        top->offset = vbdValue();
 
         // dump variables into VCD file and toggle clock
         for (clk=0; clk<2; clk++) {
