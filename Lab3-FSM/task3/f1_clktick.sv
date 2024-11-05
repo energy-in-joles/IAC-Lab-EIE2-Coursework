@@ -3,7 +3,7 @@ module f1_clktick #(
 )(
     input   logic                   clk,
     input   logic                   rst,
-    input   logic                   en,
+    input   logic                    en,
     input   logic [N_WIDTH-1:0]       N,
     output  logic [7:0]             dout
 );

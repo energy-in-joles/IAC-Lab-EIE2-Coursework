@@ -21,7 +21,7 @@ int main(int argc, char **argv, char **env) {
     vbdHeader("Lab 3: F1 FSM");
 
     // initialize simulation inputs
-    top->N = 24;
+    top->N = 48;
     top->clk = 1;
     top->rst = 0;
     top->en = 1;

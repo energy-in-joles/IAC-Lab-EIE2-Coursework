@@ -85,7 +85,7 @@ vbdCycle(i+1);
 // ---- end of Vbuddy output section
 ```
 
-This block essentially initialises 4 7-seg displays, where the count value is bit shifted by 4 bits to each display to dispaly each hex value. A `0xF` mask is also applied.
+This block essentially initialises 4 7-seg displays, where the count value is bit shifted by 4 bits to each display to dispaly each hex value. A `0xF` mask is also applied to ensure it fits the expected 8 bit format.
 
 At the end of the file, we also add `vbdClose();` to close Vbuddy.
 
@@ -112,3 +112,20 @@ We also increase the number of clock cycles from 300 to 1000, as plotting dots o
 ![vbd_plot](img/vbd_plot.gif)
 
 As expected, we observe a linear relationship between clock cycles and count value. When we toggle `en` to LOW, we see the plot adjusting to a horizontal line, as the count is no longer increasing.
+
+### Test Yourself Challenge
+
+For the challenge, we are told to modify the counter and testbench files so that the `en` signal controls the direction of counting via the `vbdFlag()`.
+
+This can be done by modifying the behaviour of `en` in counter.sv:
+
+```SystemVerilog
+always_ff @ (posedge clk)
+    if (rst)         count <= {WIDTH{1'b0}};
+    else if (en)     count <= count + {{WIDTH-1{1'b0}}, 1};
+    else             count <= count - {{WIDTH-1{1'b0}}, 1};
+```
+
+This way, `en` at LOW would cause the counter to count down, and `en` at HIGH would cause the counter to count up:
+
+![up_down](img/up_down.gif)
