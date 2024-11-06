@@ -82,4 +82,4 @@ Finally, we recompile and run the program:
 
 ![two_waves](../images/two_waves.gif)
 
-As seen in the gif, when the rotary encoder is set at 64 offset, we observe the waves to be 90 degrees out of phase as expected. When I turn the rotary encoder, we observe the change in phase offset as well.
+As seen in the gif, when the rotary encoder is set at 64 offset, we observe the waves to be 90 degrees out of phase as expected. One of our waves is a cosine wave, and the other a sine wave of the same frequency. When I turn the rotary encoder towards the end of the video, we observe the change in phase offset as well.
